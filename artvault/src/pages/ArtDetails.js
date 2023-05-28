@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function ArtDetails() {
     const { id } = useParams();
@@ -29,7 +30,12 @@ function ArtDetails() {
             <>
             <img src={`https://www.artic.edu/iiif/2/${art.image_id}/full/400,/0/default.jpg`} alt={art.thumbnail?.alt_text} />
             <h3>{art.title}, {art.date_display}</h3>
-            <p>{art.artist_title}</p>
+            <Link to={`https://www.artic.edu/artists/${art.artist_id}`}>
+            <p>{art.artist_title}, {art.place_of_origin}</p>
+            </Link>
+            <p>Medium: {art.medium_display}</p>
+            <p>Dimensions: {art.dimensions}</p>
+            {art.provenance_text && <p>Provenance Text: {art.provenance_text}</p>}
             </>
         )
     }
