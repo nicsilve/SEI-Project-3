@@ -17,13 +17,15 @@ const app = express();
 const mongoose = require('./models/connection');
 
 app.use(express.json());
+app.use(cors());
+app.use(morgan('dev'));
 
 // define art controller to server and connect it
 const artController = require('./controllers/art-controller.js')
+app.use('/art', artController)
 app.use('/', artController)
 
-app.use(cors());
-app.use(morgan('dev'));
+
 
 
 
