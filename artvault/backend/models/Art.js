@@ -7,8 +7,10 @@ const ArtSchema = new mongoose.Schema({
   artist: String,
   title: String,
   medium: String,
-  img: String,
-  artist_origin: String
+  image: String,
+  artist_origin: String,
+  description: String,
+  date_of_creation: Number
 },{timestamps: true});
 
 const Art = mongoose.model("Art", ArtSchema);

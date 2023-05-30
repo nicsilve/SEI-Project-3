@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 // Create route
-router.post("/:id", async (req, res) =>  {
+router.post("/", async (req, res) =>  {
     try{
         res.json(await Art.create(req.body));
     } catch(err) {

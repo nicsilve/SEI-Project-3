@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import AddArt from "./AddArt";
 
 function Arts() {
 
     const[arts, setArts] = useState([]);
-    const[imgs, setImgs] = useState([]);
 
     const fetchArt = async () => {
         try {
@@ -31,29 +31,13 @@ function Arts() {
                     <div key={idx}>
                         <h1>{art.title}</h1>
                         <h2>{art.artist}</h2>
+                        <a href={`http://localhost:3000/details/${art._id}`}>{art._id}</a>
                     </div>
                 )
             })}
         </section>
 
     )
-
-
-    // return(
-    //     <section className="container">
-    //     {arts.map((art,idx) => {
-    //         return (
-    //             <div key={idx}>
-    //                 <Link to={`details/${art.id}`}>
-    //                 <h3>{art.title}, {art.date_display}</h3>
-    //                 <p>{art.artist_title}</p>
-    //                 <img src={`https://www.artic.edu/iiif/2/${art.image_id}/full/200,/0/default.jpg`} alt={art.thumbnail.alt_text}/>
-    //                 </Link>
-    //             </div>
-    //         )
-    //     })}
-    //     </section>
-    // );
 }
 
 export default Arts;
