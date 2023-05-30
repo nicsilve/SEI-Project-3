@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
@@ -6,6 +6,22 @@ function ArtDetails() {
     const { id } = useParams();
     const url = `http://localhost:4000/details/${id}`
     const[art, setArt] = useState([])
+
+    const navigate = useNavigate()
+
+    async function removeArt() {
+        try {
+            const options = {
+                method: "DELETE"
+            }
+            const response = await fetch(url, options)
+            const deletedArt = await response.json()
+            navigate('/')
+        } catch(err) {
+            console.log(err)
+            navigate(url)
+        }
+    }
 
     // console.log({id})
 
@@ -31,6 +47,8 @@ function ArtDetails() {
             <p>{art.artist}</p>
             <p>{art.title}</p>
             {art.image && <img src={`${art.image}`} />}
+            <p>{art.description}</p>
+            <button onClick={removeArt}>Delete from Art Vault</button>
             </>
         )
     }
