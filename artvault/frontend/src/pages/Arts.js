@@ -25,17 +25,32 @@ function Arts() {
     }, [])
 
     return(
+        <>
+        <p className="index-copy">Curate your own art gallery with Art Vault</p>
         <section className="container">
             {arts.map((art,idx) => {
                 return(
                     <div key={idx}>
-                        <h1>{art.title}</h1>
-                        <h2>{art.artist}</h2>
-                        <a href={`http://localhost:3000/details/${art._id}`}>{art._id}</a>
+                        <Link to={`http://localhost:3000/details/${art._id}`}>
+                        <div className="card">
+                            <div className="card-image">
+                            <img src={`${art.image}`} alt={art.title} />
+                            </div>
+                        <div className="card-title">
+                        <h2>{`${art.title}, ${art.date_of_creation}`}</h2>
+                        <div className="card-artist">
+                        <h3>{art.artist}</h3>
+                        </div>
+                        </div>
+                        </div>
+                        </Link>
+                        {/* <a href={`http://localhost:3000/details/${art._id}`}>{art._id}</a> */}
+                        
                     </div>
                 )
             })}
         </section>
+        </>
 
     )
 }

@@ -44,11 +44,16 @@ function ArtDetails() {
     function loaded() {
         return(
             <>
-            <p>{art.artist}</p>
-            <p>{art.title}</p>
+            <div className="details">
+            <div className="details-img">
             {art.image && <img src={`${art.image}`} />}
+            </div>
+            <h2>{art.title}, {art.date_of_creation}</h2>
+            <h4>{art.artist}, {art.artist_origin}</h4>
+            <p>Medium: {art.medium}</p>
             <p>{art.description}</p>
             <button onClick={removeArt}>Delete from Art Vault</button>
+            </div>
             </>
         )
     }
