@@ -22,7 +22,7 @@ router.post("/:id", async (req, res) =>  {
 });
 
 // Show route
-router.get('/:id', async(req,res) => {
+router.get('/details/:id', async(req,res) => {
     try {
         res.json(await Art.findById(req.params.id))
     } catch(err) {
