@@ -1,10 +1,13 @@
 import Arts from "./Arts";
 import { useState } from "react";
+import { useNavigate } from "react-router";
+import { useParams } from 'react-router';
 
 function AddArt() {
 
     const arturl = 'http://localhost:4000/'
     const [arts, setArts] = useState([]);
+    const navigate = useNavigate();
 
     // creating newForm array of objects
     const [newForm, setNewForm] = useState({
@@ -56,7 +59,8 @@ async function handleSubmit(e) {
             // have to specify what you're sending is going to be a string
             body: JSON.stringify(newForm)
         })
-        console.log(myNewArt)
+        return navigate(`/`);
+        // console.log(myNewArt)
     } catch(err) {
         console.log(err)
     }

@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     try {
         res.json(await Art.find({}));
     } catch(err) {
-        res.status(400).json(error)
+        res.status(400).json(err)
     }
 });
 
