@@ -44,7 +44,7 @@ function ArtDetails() {
             <>
             <div className="details">
             <div className="details-img">
-            {art.image && <img src={`${art.image}`} />}
+            {art.image && <img src={`${art.image}`} alt={`${art.title}`}/>}
             </div>
             <h2>{art.title}, {art.date_of_creation}</h2>
             <h4>{art.artist}, {art.artist_origin}</h4>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import AddArt from "./AddArt";
 
 function Arts() {
 

@@ -28,23 +28,23 @@ function AddArt() {
         }))
     }
 
-    // create function to contact API and send current state to our backend and send content from local state as JSON. data we send from frontend should be accessibile in the create route's request body req.body
-    async function createArt(artData) {
-        try {
-            // make post request to create art
-            const newArt = await fetch(arturl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(artData),
-                });
-                console.log(await newArt.json())
-        }
-        catch(err) {
-            console.log(err)
-        }
-    }
+    // // create function to contact API and send current state to our backend and send content from local state as JSON. data we send from frontend should be accessibile in the create route's request body req.body
+    // async function createArt(artData) {
+    //     try {
+    //         // make post request to create art
+    //         const newArt = await fetch(arturl, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(artData),
+    //             });
+    //             console.log(await newArt.json())
+    //     }
+    //     catch(err) {
+    //         console.log(err)
+    //     }
+    // }
 
     // defining function to handle form submission
 async function handleSubmit(e) {
