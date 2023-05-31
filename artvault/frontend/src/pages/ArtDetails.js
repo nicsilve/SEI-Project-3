@@ -38,7 +38,7 @@ function ArtDetails() {
             }
         }
         fetchArtPiece();
-    }, [])
+    }, [url])
 
     function loaded() {
         return(
