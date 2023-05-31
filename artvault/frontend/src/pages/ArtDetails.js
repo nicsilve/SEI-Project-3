@@ -23,21 +23,22 @@ function ArtDetails() {
 
     // console.log({id})
 
-    const fetchArtPiece = async () => {
-        try {
-            let artPiece = await fetch(url);
-            artPiece = await artPiece.json();
-            setArt(artPiece)
-            console.log(artPiece)
-        }
-        catch(err) {
-            console.log(err)
-        }
-    }
+ 
 
     useEffect(() => {
+        const fetchArtPiece = async () => {
+            try {
+                let artPiece = await fetch(url);
+                artPiece = await artPiece.json();
+                setArt(artPiece)
+                console.log(artPiece)
+            }
+            catch(err) {
+                console.log(err)
+            }
+        }
         fetchArtPiece();
-    }, [fetchArtPiece])
+    }, [])
 
     function loaded() {
         return(
