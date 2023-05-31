@@ -28,24 +28,6 @@ function AddArt() {
         }))
     }
 
-    // // create function to contact API and send current state to our backend and send content from local state as JSON. data we send from frontend should be accessibile in the create route's request body req.body
-    // async function createArt(artData) {
-    //     try {
-    //         // make post request to create art
-    //         const newArt = await fetch(arturl, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify(artData),
-    //             });
-    //             console.log(await newArt.json())
-    //     }
-    //     catch(err) {
-    //         console.log(err)
-    //     }
-    // }
-
     // defining function to handle form submission
 async function handleSubmit(e) {
     try {
@@ -69,12 +51,13 @@ async function handleSubmit(e) {
 
 
     return(
-        <>
-        <div className="form-container">
-        <h1>Add to your gallery</h1>
+        <div className="add-art-gallery">
+        
+        <h1 className="add-title">Add to your gallery</h1>
         <form onSubmit={handleSubmit}>
-        <label>
-                <span>Title:</span>
+            <ul className="flex-outer">
+                <li>
+                <label>Title:</label>
                 <input
                     type='text'
                     required
@@ -83,9 +66,10 @@ async function handleSubmit(e) {
                     value={newForm.title}
                     onChange={handleChange}
                 />
-            </label>
-            <label>
-                <span>Artist's Name:</span>
+                </li>
+            
+            <li>
+            <label>Artist's Name:</label>
                 <input
                     type='text'
                     required
@@ -94,9 +78,9 @@ async function handleSubmit(e) {
                     value={newForm.artist}
                     onChange={handleChange}
                 />
-            </label>
-            <label>
-                <span>Image URL:</span>
+            </li>
+            <li>
+            <label>Image URL: </label>
                 <input
                     type='text'
                     required
@@ -105,9 +89,9 @@ async function handleSubmit(e) {
                     value={newForm.image}
                     onChange={handleChange}
                 />
-            </label>
-            <label>
-                <span>Medium:</span>
+           </li>
+           <li>
+           <label>Medium:</label>
                 <input
                     type='text'
                     required
@@ -116,9 +100,9 @@ async function handleSubmit(e) {
                     value={newForm.medium}
                     onChange={handleChange}
                 />
-            </label>
-            <label>
-                <span>Artist's Origin</span>
+           </li>
+           <li>
+           <label>Artist's Origin: </label>
                 <input
                     type='text'
                     required
@@ -127,10 +111,10 @@ async function handleSubmit(e) {
                     value={newForm.artist_origin}
                     onChange={handleChange}
                 />
-            </label>
-            <label>
-                <span>Description:</span>
-                <input
+           </li>
+           <li>
+           <label>Description:</label>
+            <input
                     type='text'
                     required
                     placeholder="Description"
@@ -138,9 +122,9 @@ async function handleSubmit(e) {
                     value={newForm.description}
                     onChange={handleChange}
                 />
-            </label>
-            <label>
-                <span>Artwork's Origin Date:</span>
+           </li>
+           <li>
+           <label>Artwork Date:</label>
                 <input
                     type='number'
                     required
@@ -151,12 +135,15 @@ async function handleSubmit(e) {
                     value={newForm.date_of_creation}
                     onChange={handleChange}
                 />
-            </label>
-
-            <button>Submit Form</button>
+           </li>
+            </ul>
+            <div className="submit-button">
+            <button>Add to your gallery</button>
+            </div>
+            
         </form>
+        
         </div>
-        </>
     )
 }
 

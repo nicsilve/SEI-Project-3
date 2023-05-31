@@ -7,6 +7,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  justify-content: right;
+  color: black;
+}
+
+li {
+  margin: 20px 10px 0px 25px;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
 .card {
   display: grid;
   height: 300px;
@@ -40,21 +55,6 @@ nav {
   display: flex;
   border-bottom: 1px solid black;
   margin-bottom: 30px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display:flex;
-  justify-content: right;
-  color: black;
-}
-
-li {
-  margin: 20px 10px 0px 25px;
-  font-size: 20px;
-  white-space: nowrap;
 }
 
 .header-img {
@@ -133,4 +133,105 @@ a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgray;
+  margin-top: 20px;
+}
+
+.details-img img {
+  margin-top: 20px;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.description-value {
+  margin: 20px 300px 20px 300px;
+  line-height: 25px;
+}
+
+.delete-button {
+  border: solid 0.5px black;
+  background-color: #d43d49;
+  color: rgb(249, 245, 245);
+  margin: 20px 0 40px 0;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.delete-button:hover{
+  background-color: red;
+  color: rgb(249, 245, 245);
+  padding: 10px;
+}
+
+.add-art-gallery {
+  background-color: gray;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-outer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+}
+
+.flex-outer li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-basis: 50%;
+  font-weight: bold;
+}
+
+.flex-outer label {
+  min-width: 120px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.flex-outer input {
+  flex: 1;
+  border: solid 1px black;
+  padding: 10px;
+}
+
+.submit-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 10px;
+  background-color: rgb(120, 189, 120);
+  font-size: 15px;
+}
+
+.submit-button button:hover {
+  background-color: green;
+}
+
+.add-title {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: white;
+  padding-top: 10px;
+  text-shadow: -0.2px 0.2px 0 #000,
+  0.2px 0.2px 0 #000,
+ 0.2px -0.2px 0 #000,
+-0.2px -0.2px 0 #000;
 }
