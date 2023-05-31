@@ -37,7 +37,7 @@ function ArtDetails() {
 
     useEffect(() => {
         fetchArtPiece();
-    }, [])
+    }, [fetchArtPiece])
 
     function loaded() {
         return(
