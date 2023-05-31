@@ -13,7 +13,7 @@ function ArtDetails() {
             const options = {
                 method: "DELETE"
             }
-            const response = await fetch(url, options)
+            await fetch(url, options)
             navigate('/')
         } catch(err) {
             console.log(err)
@@ -23,7 +23,7 @@ function ArtDetails() {
 
     // console.log({id})
 
-    async function fetchArtPiece() {
+    const fetchArtPiece = async () => {
         try {
             let artPiece = await fetch(url);
             artPiece = await artPiece.json();

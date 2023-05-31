@@ -50,7 +50,7 @@ function AddArt() {
 async function handleSubmit(e) {
     try {
         e.preventDefault();
-        const myNewArt = await fetch(arturl, {
+        await fetch(arturl, {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'
