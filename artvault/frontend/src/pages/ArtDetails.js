@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 
 function ArtDetails() {
     const { id } = useParams();
@@ -15,7 +14,6 @@ function ArtDetails() {
                 method: "DELETE"
             }
             const response = await fetch(url, options)
-            const deletedArt = await response.json()
             navigate('/')
         } catch(err) {
             console.log(err)

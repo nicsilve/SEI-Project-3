@@ -1,12 +1,11 @@
-import Arts from "./Arts";
+
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { useParams } from 'react-router';
 
 function AddArt() {
 
     const arturl = 'http://localhost:4000/'
-    const [arts, setArts] = useState([]);
+
     const navigate = useNavigate();
 
     // creating newForm array of objects
