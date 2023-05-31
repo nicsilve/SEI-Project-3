@@ -115,11 +115,22 @@ a:hover{
   color: darkgray;
 }
 
-/* .details{
+.collections-title {
   display: flex;
   justify-content: center;
-} */
-
-/* .details-img{
   align-items: center;
-} */
+  margin-top: 60px;
+}
+
+.collections-list a {
+  color: gray;
+}
+.collections-list a:hover {
+  color: black;
+}
+
+.collections-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

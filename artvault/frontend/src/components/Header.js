@@ -16,15 +16,14 @@ function Header() {
             </Link>
             </li>
             <li>
-                <h1>Artists</h1>
-            </li>
-            <li>
             <Link to="/addart">
                 <h1>Add to Gallery</h1>
             </Link>
             </li>
             <li>
+                <Link to='/collections'>
                 <h1>Explore Collections</h1>
+                </Link>
             </li>
             </ul>
             </nav>

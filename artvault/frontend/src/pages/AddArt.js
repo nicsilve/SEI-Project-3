@@ -70,7 +70,8 @@ async function handleSubmit(e) {
 
     return(
         <>
-        <h1>Add an Art Piece</h1>
+        <div className="form-container">
+        <h1>Add to your gallery</h1>
         <form onSubmit={handleSubmit}>
         <label>
                 <span>Title:</span>
@@ -154,6 +155,7 @@ async function handleSubmit(e) {
 
             <button>Submit Form</button>
         </form>
+        </div>
         </>
     )
 }
